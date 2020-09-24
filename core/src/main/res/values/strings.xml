@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_date_released_example">Wed, 20 January 2001</string>
+    <string name="text_game_title_example">Grand Turismo</string>
+    <string name="image_description_of_game_list">Image of game list</string>
+    <string name="text_game_total_reviews_example">2303 reviews</string>
+    <string name="no_data">Data Kosong</string>
+    <string name="something_wrong">Oops.. something wrong</string>
+</resources>

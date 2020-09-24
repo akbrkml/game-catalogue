@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail.DetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player_view"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            app:autoPlay="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showFullScreenButton="false" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_game_image_detail"
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_80dp"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="@id/youtube_player_view"
+            app:layout_constraintTop_toBottomOf="@id/youtube_player_view"
+            tools:src="@color/colorPrimary" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_game_title"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@id/fab_game_favorite"
+            app:layout_constraintStart_toEndOf="@id/iv_game_image_detail"
+            app:layout_constraintTop_toTopOf="@id/iv_game_image_detail"
+            tools:text="@string/text_game_title_example" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_game_date_released"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toStartOf="@id/fab_game_favorite"
+            app:layout_constraintStart_toEndOf="@id/iv_game_image_detail"
+            app:layout_constraintTop_toBottomOf="@id/tv_game_title"
+            tools:text="@string/text_date_released_example"/>
+
+        <RatingBar
+            android:id="@+id/rb_game_rating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            app:layout_constraintStart_toEndOf="@id/iv_game_image_detail"
+            app:layout_constraintTop_toBottomOf="@id/tv_game_date_released" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_game_total_reviews"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="@id/rb_game_rating"
+            app:layout_constraintEnd_toStartOf="@id/fab_game_favorite"
+            app:layout_constraintStart_toEndOf="@id/rb_game_rating"
+            app:layout_constraintTop_toTopOf="@id/rb_game_rating"
+            tools:text="@string/text_game_total_reviews_example" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_game_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:src="@drawable/ic_heart_line"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_game_title"
+            app:tint="@color/colorWhite" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_game_store"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:text="@string/label_button_go_to_store"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_game_image_detail" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_game_screenshot"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_game_store"
+            tools:listitem="@layout/item_game_carousel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_label_information"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:paddingStart="@dimen/dimen_16dp"
+            android:paddingEnd="@dimen/dimen_16dp"
+            android:text="@string/label_information"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="@id/rv_game_screenshot"
+            app:layout_constraintTop_toBottomOf="@id/rv_game_screenshot" />
+
+        <View
+            android:id="@+id/view_separator_horizontal"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="@dimen/dimen_2dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="@id/tv_label_information"
+            app:layout_constraintStart_toStartOf="@id/tv_label_information"
+            app:layout_constraintTop_toBottomOf="@id/tv_label_information" />
+
+        <View
+            android:id="@+id/view_separator_vertical"
+            android:layout_width="@dimen/dimen_2dp"
+            android:layout_height="@dimen/dimen_20dp"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="@id/view_separator_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/view_separator_horizontal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_label_about_this_game"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:text="@string/label_about_this_game"
+            app:layout_constraintBottom_toBottomOf="@id/view_separator_vertical"
+            app:layout_constraintStart_toEndOf="@id/view_separator_vertical"
+            app:layout_constraintTop_toTopOf="@id/view_separator_vertical" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_game_description"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/view_separator_vertical"
+            app:layout_constraintTop_toBottomOf="@id/view_separator_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
